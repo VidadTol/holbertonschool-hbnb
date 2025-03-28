@@ -14,15 +14,15 @@ body {
 header {
   background-color: #655fe2;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex; /* Pour aligner le logo et la navigation */
   align-items: center;
   justify-content: space-between; /* Espacer le logo et la navigation */
 }
 
 header .logo {
-  width: 150px;
-  height: auto;
+  width: auto;
+  height: 60px;
 }
 
 /* === Navigation Bar === */
@@ -31,7 +31,6 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
 }
 
 nav a {
@@ -106,20 +105,20 @@ h1 {
 /* === Place Card Styles === */
 .place-card {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 10px;
   text-align: center;
   width: 280px; /* Ajuster la largeur des cartes */
-  margin: 10px; /* Ajouter une marge autour des cartes */
+  margin: 20px; /* Ajouter une marge autour des cartes */
   border: 1px solid #ddd; 
 }
 
 .place-card h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: #333;
-  font-size: 1.2rem;
+  color: #555;
+  font-size: 1.5rem;
 }
 
 .place-card .place-details {
@@ -143,5 +142,7 @@ h1 {
 .place-card .details-button:hover {
   background-color: #655fe2;
 }
+
+
 
 
