@@ -1,7 +1,3 @@
-/* 
-  This is a SAMPLE File to get you started. Follow the instructions on the project to complete the tasks. 
-  You'll probably need to override some of theese styles.
-*/
 
 * {
   box-sizing: border-box;
@@ -25,7 +21,7 @@ header {
 }
 
 header .logo {
-  width: 120px;
+  width: 150px;
   height: auto;
 }
 
@@ -35,13 +31,25 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 1rem;
+}
+
+nav a.login-button {
+  background-color: #756d6d97; /* Couleur du bouton Login */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 footer {
@@ -57,3 +65,85 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
+h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333; /* Couleur du titre */
+}
+
+#filter {
+  background-color: #fff; /* Fond blanc pour la section de filtre */
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+#filter label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #555; /* Couleur du label */
+}
+
+#filter select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* === Flex Containers === */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrer les cartes */
+  gap: 20px;
+  align-items: flex-start; /* Aligner les cartes en haut */
+  width: 90%; /* Limiter la largeur du conteneur principal */
+  max-width: 1200px; /* Définir une largeur maximale */
+}
+
+/* === Place Card Styles === */
+.place-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 280px; /* Ajuster la largeur des cartes */
+  margin: 10px; /* Ajouter une marge autour des cartes */
+  border: 1px solid #ddd; 
+}
+
+.place-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.place-card .place-details {
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.place-card .details-button {
+  background-color: #655fe2; 
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.place-card .details-button:hover {
+  background-color: #655fe2;
+}
+
+
