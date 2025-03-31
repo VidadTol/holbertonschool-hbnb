@@ -51,12 +51,12 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/*footer {
+footer {
   background-color: #655fe2;
   color: #fff;
   padding: 1rem;
   text-align: center;
-}*/
+}
 
 main {
   padding: 2rem;
@@ -143,6 +143,32 @@ h1 {
   background-color: #655fe2;
 }
 
+.review-card {
+  margin: 20px; /* Marge */
+  padding: 10px; /* Rembourrage */
+  border: 1px solid #ddd; /* Bordure */
+  border-radius: 10px; /* Rayon de bordure */
+  background-color: #fff; /* Ajoutez un fond blanc pour la visibilité */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optionnel: pour un effet de carte */
+  margin-bottom: 15px; /* Optionnel: pour espacer les avis */
+  padding: 15px; /* Optionnel: un peu plus de rembourrage pour les avis */
+}
+
+.review-card .review-comment {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.review-card .review-user {
+  font-style: italic;
+  color: #777;
+  text-align: right;
+}
+
+.review-card .review-rating {
+  color: #555;
+  font-weight: bold;
+}
 
 
 
