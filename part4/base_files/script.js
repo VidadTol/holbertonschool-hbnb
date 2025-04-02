@@ -1,23 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form"); // Assurez-vous que l'ID correspond à votre formulaire dans login.html
 
   if (loginForm) {
-    loginForm.addEventListener("submit", async (event) {
+    loginForm.addEventListener("submit", async function (event) {
       event.preventDefault(); // Empêcher la soumission de formulaire par défaut
-      handleLogin(); // Appeler une fonction pour gérer la connexion
+      await handleLogin(); // Utiliser await ici pour s'assurer que handleLogin termine
     });
   }
 });
 
-async function loginUser(email, password) {
+async function handleLogin() {
   const emailInput = document.getElementById("email"); // Assurez-vous que l'ID correspond
   const passwordInput = document.getElementById("password"); // Assurez-vous que l'ID correspond
   const errorContainer = document.getElementById("login-error"); // Un endroit pour afficher les erreurs (à créer dans login.html)
 
+  // Vérification de l'existence des éléments HTML requis
+  if (!emailInput || !passwordInput || !errorContainer) {
+    console.error("Required elements are missing in the login form.");
+    return;
+  }
+
   const email = emailInput.value;
   const password = passwordInput.value;
 
-  const apiUrl = "http://127.0.0.1:5000/api/v1/auth/login"; // Remplacez par l'URL réelle de votre API de connexion
+  const apiUrl = "http://127.0.0.1:5000/api/v1/auth/login"; // URL de l'API de connexion
 
   try {
     const response = await fetch(apiUrl, {
@@ -32,9 +38,8 @@ async function loginUser(email, password) {
 
     if (response.ok) {
       // Connexion réussie
-      const data = await response.json()
-      document.cookie = `token=${data.access_token};`
-      storeJWTInCookie(jwtToken); // Fonction pour stocker le JWT dans un cookie
+      storeJWTInCookie(data.access_token); // Fonction pour stocker le JWT dans un cookie
+      console.log("JWT stored in cookie:", document.cookie);
       window.location.href = "index.html"; // Rediriger vers la page principale
     } else {
       // Échec de la connexion
@@ -44,6 +49,7 @@ async function loginUser(email, password) {
     console.error("Error while connecting:", error);
     displayLoginError("An error occurred while connecting.");
   }
+}
 
   function storeJWTInCookie(token) {
     const cookieName = "authToken"; // Nom du cookie
@@ -51,14 +57,14 @@ async function loginUser(email, password) {
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + expirationDays);
 
-    const cookieValue = `<span class="math-inline">\{cookieName\}\=</span>{token}; expires=${expirationDate.toUTCString()}; path=/; httpOnly; secure;`; // Ajoutez 'secure' si votre site est en HTTPS
+    const cookieValue = `${cookieName}=${token}; expires=${expirationDate.toUTCString()}; path=/; SameSite=Strict`;
 
     document.cookie = cookieValue;
     console.log("JWT stored in cookie:", cookieValue);
   }
-}
-function displayLoginError(message) {
-    const errorContainer = document.getElementById('login-error'); // Assurez-vous que cet élément existe dans login.html
+
+  function displayLoginError(message) {
+    const errorContainer = document.getElementById('login-error');
     if (errorContainer) {
         errorContainer.textContent = message;
     } else {
