@@ -1,174 +1,187 @@
-
+/* === Global Styles === */
+/* Appliquer une base uniforme à tous les éléments */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Gérer les tailles d'éléments correctement */
+  margin: 0; /* Supprimer les marges par défaut */
+  padding: 0; /* Supprimer les espaces internes par défaut */
+  font-family: Arial, sans-serif; /* Appliquer une police lisible */
 }
 
+/* === Body Styles === */
+/* Définir le fond et la couleur principale pour le corps du document */
 body {
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f4f4f4; /* Couleur de fond neutre */
+  color: #333; /* Couleur de texte sombre pour la lisibilité */
 }
 
+/* === Header Styles === */
+/* Styliser la section header, contenant le logo et la navigation */
 header {
-  background-color: #655fe2;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: flex; /* Pour aligner le logo et la navigation */
-  align-items: center;
-  justify-content: space-between; /* Espacer le logo et la navigation */
+  background-color: #655fe2; /* Couleur d'arrière-plan du header */
+  color: #fff; /* Couleur de texte blanche pour le contraste */
+  padding: 1rem 2rem; /* Espacement interne pour une meilleure apparence */
+  display: flex; /* Utiliser Flexbox pour l'agencement horizontal */
+  align-items: center; /* Centrer les éléments verticalement */
+  justify-content: space-between; /* Espacer les éléments horizontalement */
 }
 
 header .logo {
-  width: auto;
-  height: 60px;
+  width: auto; /* Garder une largeur adaptée */
+  height: 60px; /* Définir la hauteur du logo */
 }
 
-/* === Navigation Bar === */
+/* === Navigation Bar Styles === */
+/* Styliser la barre de navigation du header */
 nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Utiliser Flexbox pour aligner les liens */
+  flex-direction: row; /* Positionner les liens horizontalement */
+  justify-content: space-between; /* Espacer les liens dans la navigation */
+  align-items: center; /* Centrer les liens verticalement */
 }
 
 nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 1rem;
+  color: #fff; /* Couleur blanche pour les liens */
+  text-decoration: none; /* Supprimer le soulignement des liens */
+  margin-left: 1rem; /* Ajouter un espacement entre les liens */
 }
 
 nav a.login-button {
-  /*background-color: #756d6d97; /* Couleur du bouton Login */
+  /* Couleur et style du bouton de connexion */
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  /*font-weight: bold;*/
+  padding: 0.5rem 1rem; /* Espacement interne du bouton */
+  border-radius: 5px; /* Bordure arrondie pour un aspect moderne */
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Ajouter un soulignement au survol */
 }
 
+/* === Footer Styles === */
+/* Styliser la section footer pour le bas de la page */
 footer {
-  background-color: #655fe2;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+  background-color: #655fe2; /* Couleur d'arrière-plan similaire au header */
+  color: #fff; /* Texte blanc pour le contraste */
+  padding: 1rem; /* Espacement interne du footer */
+  text-align: center; /* Centrer le texte horizontalement */
 }
 
+/* === Main Content Styles === */
+/* Styliser le contenu principal de la page */
 main {
-  padding: 2rem;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2rem; /* Espacement interne pour le contenu principal */
+  display: flex; /* Utiliser Flexbox pour organiser les éléments */
+  flex-direction: column; /* Positionner les éléments verticalement */
+  align-items: center; /* Centrer les éléments horizontalement */
 }
 
+/* === Heading Styles === */
+/* Styliser les titres pour un aspect clair et attractif */
 h1 {
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #333; /* Couleur du titre */
+  margin-bottom: 2rem; /* Ajouter un espace sous le titre */
+  text-align: center; /* Centrer le texte horizontalement */
+  color: #333; /* Couleur sombre pour la lisibilité */
 }
 
+/* === Filter Section Styles === */
+/* Styliser la section contenant les filtres */
 #filter {
-  background-color: #fff; /* Fond blanc pour la section de filtre */
-  padding: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
+  background-color: #fff; /* Fond blanc pour contraster avec le corps */
+  padding: 1rem; /* Espacement interne */
+  margin-bottom: 2rem; /* Espacement avec les autres sections */
+  display: flex; /* Organiser les éléments en ligne */
+  align-items: center; /* Centrer les éléments verticalement */
 }
 
 #filter label {
-  font-weight: bold;
-  margin-right: 0.5rem;
-  color: #555; /* Couleur du label */
+  font-weight: bold; /* Texte en gras pour les labels */
+  margin-right: 0.5rem; /* Espacement à droite des labels */
+  color: #555; /* Couleur neutre pour les labels */
 }
 
 #filter select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  padding: 0.5rem; /* Espacement interne des menus déroulants */
+  border: 1px solid #ccc; /* Bordure grise légère */
+  border-radius: 3px; /* Bordure légèrement arrondie */
 }
 
-/* === Flex Containers === */
+/* === Flex Container Styles === */
+/* Styliser le conteneur principal pour les cartes */
 .flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centrer les cartes */
-  gap: 20px;
+  display: flex; /* Utiliser Flexbox pour agencer les cartes */
+  flex-wrap: wrap; /* Autoriser les cartes à aller à la ligne si nécessaire */
+  justify-content: center; /* Centrer les cartes horizontalement */
+  gap: 20px; /* Espacement entre les cartes */
   align-items: flex-start; /* Aligner les cartes en haut */
-  width: 90%; /* Limiter la largeur du conteneur principal */
-  max-width: 1200px; /* Définir une largeur maximale */
+  width: 90%; /* Définir une largeur maximale pour le conteneur */
+  max-width: 1200px; /* Largeur maximale des cartes */
 }
 
 /* === Place Card Styles === */
+/* Styliser les cartes représentant des lieux */
 .place-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: center;
-  width: 280px; /* Ajuster la largeur des cartes */
-  margin: 20px; /* Ajouter une marge autour des cartes */
-  border: 1px solid #ddd; 
+  background-color: #fff; /* Fond blanc pour les cartes */
+  border-radius: 10px; /* Bordures arrondies */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtile */
+  padding: 10px; /* Espacement interne des cartes */
+  text-align: center; /* Centrer le texte horizontalement */
+  width: 280px; /* Largeur fixe des cartes */
+  margin: 20px; /* Espacement externe entre les cartes */
+  border: 1px solid #ddd; /* Bordure grise légère */
 }
 
 .place-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: #555;
-  font-size: 1.5rem;
+  margin-top: 0; /* Supprimer la marge supérieure */
+  margin-bottom: 0.5rem; /* Espacement sous le titre */
+  color: #555; /* Couleur neutre du texte */
+  font-size: 1.5rem; /* Taille du texte du titre */
 }
 
 .place-card .place-details {
-  margin-bottom: 1rem;
-  color: #555;
-  font-size: 0.9rem;
+  margin-bottom: 1rem; /* Espacement sous les détails */
+  color: #555; /* Couleur neutre pour les détails */
+  font-size: 0.9rem; /* Taille du texte pour les détails */
 }
 
 .place-card .details-button {
-  background-color: #655fe2; 
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  font-size: 0.9rem;
+  background-color: #655fe2; /* Couleur principale pour le bouton */
+  color: white; /* Texte blanc sur le bouton */
+  border: none; /* Supprimer les bordures par défaut */
+  padding: 0.75rem 1.5rem; /* Espacement interne du bouton */
+  border-radius: 25px; /* Bordure arrondie pour un look moderne */
+  cursor: pointer; /* Curseur en forme de main au survol */
+  font-weight: bold; /* Texte en gras */
+  transition: background-color 0.3s ease; /* Animation fluide pour le survol */
+  font-size: 0.9rem; /* Taille du texte */
 }
 
 .place-card .details-button:hover {
-  background-color: #655fe2;
+  background-color: #655fe2; /* Couleur inchangée au survol */
 }
 
+/* === Review Card Styles === */
+/* Styliser les cartes contenant des avis */
 .review-card {
-  margin: 20px; /* Marge */
-  padding: 10px; /* Rembourrage */
-  border: 1px solid #ddd; /* Bordure */
-  border-radius: 10px; /* Rayon de bordure */
-  background-color: #fff; /* Ajoutez un fond blanc pour la visibilité */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optionnel: pour un effet de carte */
-  margin-bottom: 15px; /* Optionnel: pour espacer les avis */
-  padding: 15px; /* Optionnel: un peu plus de rembourrage pour les avis */
+  margin: 20px; /* Marge externe pour espacer les avis */
+  padding: 15px; /* Rembourrage interne pour un contenu clair */
+  border: 1px solid #ddd; /* Bordure grise légère */
+  border-radius: 10px; /* Bordures arrondies pour un effet élégant */
+  background-color: #fff; /* Fond blanc pour les avis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtile */
+  margin-bottom: 15px; /* Espacement inférieur entre les avis */
 }
 
 .review-card .review-comment {
-  margin-bottom: 0.5rem;
-  color: #333;
+  margin-bottom: 0.5rem; /* Espacement sous le commentaire */
+  color: #333; /* Couleur sombre pour la lisibilité */
 }
 
 .review-card .review-user {
-  font-style: italic;
-  color: #777;
-  text-align: right;
+  font-style: italic; /* Texte en italique pour le nom de l'utilisateur */
+  color: #777; /* Couleur grise pour un contraste léger */
+  text-align: right; /* Alignement à droite */
 }
 
 .review-card .review-rating {
-  color: #555;
-  font-weight: bold;
+  color: #555; /* Couleur neutre pour la note */
+  font-weight: bold; /* Texte en gras pour la note */
 }
-
-
-
