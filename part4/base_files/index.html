@@ -20,6 +20,13 @@
     </header>
     <main>
         <h1>Available Places</h1>
+        <div class="tabs">
+            <button class="tab_link active" onclick="filterPlaces('all')" aria-label="Show all places">All</button>
+            <button class="tab_link" onclick="filterPlaces('Houses')" aria-label="Show Houses">Houses</button>
+            <button class="tab_link" onclick="filterPlaces('Cabins')" aria-label="Show Cabins">Cabins</button>
+            <button class="tab_link" onclick="filterPlaces('Apartment')" aria-label="Show Apartment">Apartements</button>
+        </div>
+
         <section id="filter">
             <div id="filter-container">
                 <label for="price-filter"><strong>Max Price: </strong></label>
