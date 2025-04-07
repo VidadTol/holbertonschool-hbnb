@@ -21,10 +21,10 @@
     <main>
         <h1>Available Places</h1>
         <div class="tabs">
-            <button class="tab_link active" onclick="filterPlaces('all')" aria-label="Show all places">All</button>
-            <button class="tab_link" onclick="filterPlaces('Houses')" aria-label="Show Houses">Houses</button>
-            <button class="tab_link" onclick="filterPlaces('Cabins')" aria-label="Show Cabins">Cabins</button>
-            <button class="tab_link" onclick="filterPlaces('Apartment')" aria-label="Show Apartment">Apartements</button>
+            <button class="tab-link" onclick="filterPlaces('all')" aria-label="Show all places">All</button>
+            <button class="tab-link" onclick="filterPlaces('Houses')" aria-label="Show Houses">Houses</button>
+            <button class="tab-link" onclick="filterPlaces('Cabins')" aria-label="Show Cabins">Cabins</button>
+            <button class="tab-link" onclick="filterPlaces('Apartment')" aria-label="Show Apartment">Apartements</button>
         </div>
 
         <section id="filter">
@@ -45,6 +45,7 @@
             <!-- List of places will be populated dynamically -->
             <article class="place-card">
                 <h3>Beautiful Beach House</h3>
+                <img src="/part4/doc_images/Beautiful_Beach_House.jpg" alt="Beautiful Beach House">
                 <div class="place-details">
                     <p>Price per night: $150</p>
                 </div>
@@ -53,6 +54,7 @@
             
             <article class="place-card">
                 <h3>Cozy Cabin</h3>
+                <img src="/part4/doc_images/Cozy_Cabin.jpg" alt="Cozy_Cabin">
                 <div class="place-details">
                     <p>Price per night: $100</p>
                 </div>
@@ -61,6 +63,7 @@
 
             <article class="place-card">
                 <h3>Modern Apartment</h3>
+                <img src="/part4/doc_images/Modern_Apartment.jpg" alt="Modern Apartment">
                 <div class="place-details">
                     <p>Price per night: $200</p>
                 </div>
@@ -69,17 +72,20 @@
 
         </section>
     </main>
+
+    
+
     <footer>
         <p>&copy; 2025 HBnB Evolution. All rights reserved.</p>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                  <img style="width:70px;height:20px"
+                      src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                      alt="CSS Valide !" />
+            </a>
+        </p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
-<p>
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
-          <img style="border:0;width:88px;height:31px"
-              src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-              alt="CSS Valide !" />
-    </a>
-</p>
