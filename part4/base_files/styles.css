@@ -1,4 +1,4 @@
-/* === Global Styles === */
+/* ================== Global Styles ========================== */
 /* Appliquer une base uniforme à tous les éléments */
 * {
   box-sizing: border-box; /* Gérer les tailles d'éléments correctement */
@@ -7,14 +7,21 @@
   font-family: Arial, sans-serif; /* Appliquer une police lisible */
 }
 
-/* === Body Styles === */
+/* ================= Body Styles ======================== */
 /* Définir le fond et la couleur principale pour le corps du document */
 body {
   background-color: #f4f4f4; /* Couleur de fond neutre */
   color: #333; /* Couleur de texte sombre pour la lisibilité */
 }
 
-/* === Header Styles === */
+html, body {
+  height: 100%; /* Assure que la hauteur totale couvre l'écran */
+  margin: 0; /* Supprime les marges par défaut */
+  display: flex; /* Active Flexbox */
+  flex-direction: column; /* Organise les enfants en colonne */
+}
+
+/* ==================== Header Styles ======================== */
 /* Styliser la section header, contenant le logo et la navigation */
 header {
   background-color: #655fe2; /* Couleur d'arrière-plan du header */
@@ -30,7 +37,7 @@ header .logo {
   height: 60px; /* Définir la hauteur du logo */
 }
 
-/* === Navigation Bar Styles === */
+/* ================ Navigation Bar Styles ======================= */
 /* Styliser la barre de navigation du header */
 nav {
   display: flex; /* Utiliser Flexbox pour aligner les liens */
@@ -56,25 +63,17 @@ nav a:hover {
   text-decoration: underline; /* Ajouter un soulignement au survol */
 }
 
-/* === Footer Styles === */
-/* Styliser la section footer pour le bas de la page */
-footer {
-  background-color: #655fe2; /* Couleur d'arrière-plan similaire au header */
-  color: #fff; /* Texte blanc pour le contraste */
-  padding: 1rem; /* Espacement interne du footer */
-  text-align: center; /* Centrer le texte horizontalement */
-}
-
-/* === Main Content Styles === */
+/* ====================== Main Content Styles ===================== */
 /* Styliser le contenu principal de la page */
 main {
   padding: 2rem; /* Espacement interne pour le contenu principal */
   display: flex; /* Utiliser Flexbox pour organiser les éléments */
   flex-direction: column; /* Positionner les éléments verticalement */
   align-items: center; /* Centrer les éléments horizontalement */
+  flex: 1;
 }
 
-/* === Heading Styles === */
+/* ================== Heading Styles ========================= */
 /* Styliser les titres pour un aspect clair et attractif */
 h1 {
   margin-bottom: 2rem; /* Ajouter un espace sous le titre */
@@ -82,7 +81,7 @@ h1 {
   color: #333; /* Couleur sombre pour la lisibilité */
 }
 
-/* === Filter Section Styles === */
+/* ================ Filter Section Styles ==================== */
 /* Styliser la section contenant les filtres */
 #filter {
   padding: 1rem; /* Espacement interne */
@@ -103,7 +102,7 @@ h1 {
   border-radius: 3px; /* Bordure légèrement arrondie */
 }
 
-/* === Flex Container Styles === */
+/* =================== Flex Container Styles ==================== */
 /* Styliser le conteneur principal pour les cartes */
 .flex-container {
   display: flex; /* Utiliser Flexbox pour agencer les cartes */
@@ -115,7 +114,7 @@ h1 {
   max-width: 1200px; /* Largeur maximale des cartes */
 }
 
-/* === Place Card Styles === */
+/* ================= Place Card Styles ======================== */
 /* Styliser les cartes représentant des lieux */
 .place-card {
   background-color: #fff; /* Fond blanc pour les cartes */
@@ -128,6 +127,14 @@ h1 {
   border: 1px solid #ddd; /* Bordure grise légère */
 }
 
+.place-card img {
+  width: 100%; /* Assure que l'image occupe toute la largeur de sa carte */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 20px; /* Coins arrondis pour un effet esthétique */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un look moderne */
+}
+
+
 .place-card h3 {
   margin-top: 0; /* Supprimer la marge supérieure */
   margin-bottom: 0.5rem; /* Espacement sous le titre */
@@ -136,9 +143,11 @@ h1 {
 }
 
 .place-card .place-details {
-  margin-bottom: 1rem; /* Espacement sous les détails */
-  color: #555; /* Couleur neutre pour les détails */
+  margin-bottom: 0.5rem; /* Espacement sous les détails */
+  color: #101010; /* Couleur neutre pour les détails */
   font-size: 0.9rem; /* Taille du texte pour les détails */
+  padding: 0.5rem; /* Espacement interne pour les détails */
+
 }
 
 .place-card .details-button {
@@ -157,30 +166,291 @@ h1 {
   background-color: #655fe2; /* Couleur inchangée au survol */
 }
 
-/* === Review Card Styles === */
-/* Styliser les cartes contenant des avis */
-.review-card {
-  margin: 20px; /* Marge externe pour espacer les avis */
-  padding: 15px; /* Rembourrage interne pour un contenu clair */
-  border: 1px solid #ddd; /* Bordure grise légère */
+/* ================== Available Places ======================== */
+/* Styliser la partie place details avec host price desc amenities*/
+.place-detailset {
+  display: flex; /* Positionne les éléments horizontalement */
   border-radius: 10px; /* Bordures arrondies pour un effet élégant */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtile */
+  width: 90vw; /* Largeur de la carte d'avis */
+  margin-bottom: 1rem; /* Espacement sous chaque carte */
+  gap: 0.5rem; /* Ajoute un espacement entre le texte et les : */
+}
+.place-container {
+  max-width: 90vw; /* Limite la largeur pour un cadre élégant */
+  margin: 20px auto; /* Centre le cadre horizontalement */
+  background-color: white; /* Couleur de fond légère */
+  padding: 20px; /* Espacement interne */
+  border-radius: 20px; /* Coins arrondis */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce pour l'esthétique */
+  border: 2px solid #655fe2; /* Bordure grise légère */
+}
+
+.place-info {
+  margin-bottom: 0.5rem; /* Espacement sous chaque info */
+  text-align: center;/* Centrer le texte horizontalement */
+  margin-top: 1rem; /* Espacement au-dessus de chaque info */
+  padding: 0.5rem;/* Espacement interne pour les détails */
+  flex-direction: column; /* Positionner les éléments verticalement */
+  justify-content: center;
+  width: 90vw; /* Largeur de la carte d'avis */
+  
+}
+.place-info p{
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+
+/* ================= Review Card Styles ======================== */
+
+.review-card {
+  margin: 30px; /* Marge externe pour espacer les avis */
+  padding: 1rem; /* Rembourrage interne pour un contenu clair */
+  border: 2px solid #655fe2; /* Bordure légère */
+  border-radius: 20px; /* Bordures arrondies pour un effet élégant */
   background-color: #fff; /* Fond blanc pour les avis */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtile */
-  margin-bottom: 15px; /* Espacement inférieur entre les avis */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Effet d'ombre subtile */
+  width: 90vw; /* Largeur de la carte d'avis */
+}
+
+/* Conteneur d'alignement pour "Rating:" et les étoiles */
+.review-rating-container {
+  display: flex; /* Aligne les éléments horizontalement */
+  align-items: center; /* Centre verticalement le texte et les étoiles */
+  gap: 0.5rem; /* Ajoute un espacement entre le texte et les étoiles */
+  
+}
+
+
+.rating {
+  display: flex; /* Aligne les étoiles horizontalement */
+  cursor: pointer; /* Curseur en forme de main au survol */
+  font-size: 1.5rem; /* Taille des étoiles */
+}
+
+.star {
+  color: black; /* Couleur des étoiles vides */
+  transition: color 0.3s ease; /* Animation fluide pour le survol */
+}
+
+.star.active {
+  color: gold; /* Couleur dorée pour les étoiles pleines */
+}
+
+.star.active:hover {
+  color: gold; /* Ajout de cette règle pour garantir la priorité */
 }
 
 .review-card .review-comment {
-  margin-bottom: 0.5rem; /* Espacement sous le commentaire */
-  color: #333; /* Couleur sombre pour la lisibilité */
+  margin-bottom: 5rem; /* Espacement sous le commentaire */
+  color: #141313; /* Couleur sombre pour la lisibilité */
+  font-size: 1rem; /* Taille du texte pour le commentaire */
+  text-align: left;
+  margin-bottom: 1rem; /* Espacement sous chaque carte */
+;
 }
 
 .review-card .review-user {
-  font-style: italic; /* Texte en italique pour le nom de l'utilisateur */
-  color: #777; /* Couleur grise pour un contraste léger */
-  text-align: right; /* Alignement à droite */
+  font-weight: bold; /* Texte en gras pour le nom de l'utilisateur */
+  color: #111010; /* Couleur grise pour un contraste léger */
+  text-align: left; /* Alignement à droite */
+  margin-bottom: 1rem; /* Espacement sous chaque carte */
+ 
 }
 
 .review-card .review-rating {
-  color: #555; /* Couleur neutre pour la note */
-  font-weight: bold; /* Texte en gras pour la note */
+  color: #131212; /* Couleur neutre pour la note */
+  text-align: left; /* Alignement à droite */
+}
+
+.add-a-review-button:hover {
+  background-color: #fae2f3;
+}
+
+
+/* ================ Tabs Styles ==================== */
+.tabs {
+  display: flex; /* Aligner les boutons horizontalement */
+  justify-content: center; /* Centrer les boutons */
+  gap: 10px; /* Espacement entre les boutons */
+  margin: 20px 0; /* Espacement en haut et en bas */
+}
+
+/* Style de base des boutons */
+.tabs .tab-link {
+  background-color: #f4f4f4; /* Couleur de fond par défaut */
+  color: #333; /* Couleur du texte */
+  border: 1px solid #ddd; /* Bordure grise légère */
+  padding: 10px 20px; /* Espacement interne des boutons */
+  border-radius: 5px; /* Coins arrondis */
+  text-transform: capitalize; /* Mettre la première lettre en majuscule */
+  font-size: 16px; /* Taille du texte */
+  cursor: pointer; /* Curseur en forme de main */
+  transition: all 0.3s ease; /* Transition pour des animations fluides */
+}
+
+
+/* Style au survol (hover) */
+.tabs .tab-link:hover {
+  background-color: #ddd; /* Couleur de fond plus sombre au survol */
+  color: #000; /* Texte légèrement plus sombre */
+}
+
+/* Style pour le bouton actif (classe active) */
+.tabs .tab-link.active {
+  background-color: #655fe2; /* Couleur du bouton actif */
+  color: white; /* Texte blanc */
+  font-weight: bold; /* Texte en gras pour le bouton actif */
+  border: 2px solid #4338ca; /* Bordure plus épaisse */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.tabs .tab-link:active {
+  background-color: #4338ca; /* Couleur temporaire au clic */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Effet enfoncé */
+}
+/*--------------- Add Review Page ---------------*/
+
+.add-review-card-page {
+  max-width: 600px;
+  width: 900%;
+  margin: 3rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid #655fe2; /* Bordure légère */
+}
+
+.add-review-card-page textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d0c3c3;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+
+.add-review-card-page textarea:focus {
+  border-color: #d0c3c3;
+  outline: none;
+  box-shadow: 0 0 3px rgba(65, 65, 65, 0.5);
+}
+
+.add-review-card-page button:hover {
+  background-color: #fae2f3;
+}
+
+.add-review-card-page label {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.add-review-card-page button {
+  background-color: #655fe2;
+  color: #f8f3f3;
+  border: 1px solid #655fe2;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+.rating-star {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.rating-star input {
+  display: none; 
+}
+
+.rating-star label {
+  font-size: 2rem;
+  color: #d0c3c3;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.rating-star label:hover,
+.rating-star label:hover ~ label {
+  color: #655fe2;
+}
+
+.rating-star input:checked ~ label {
+  color: #655fe2;
+}
+
+/*--------------- Login Page ---------------*/
+
+.form-login-button {
+  background-color: #e82020;
+  color: white;
+  font-family: bold;
+  background-color: #655fe2;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid #655fe2; /* Bordure légère */
+}
+
+.Welcome {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: black; /* Couleur principale */
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  
+  margin-top: 3rem;
+  border: 1px solid #d0c3c3;
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d0c3c3;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-card input:focus {
+  border-color: #d0c3c3;
+  outline: none;
+  box-shadow: 0 0 3px rgba(65, 65, 65, 0.5);
+}
+
+
+/* =================== Footer Styles ==================== */
+/* Styliser la section footer pour le bas de la page */
+footer {
+  background-color: #655fe2; /* Couleur d'arrière-plan similaire au header */
+  color: #fff; /* Texte blanc pour le contraste */
+  padding: 1rem; /* Espacement interne du footer */
+  text-align: center; /* Centrer le texte horizontalement */
 }
