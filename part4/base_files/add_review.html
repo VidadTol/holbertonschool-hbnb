@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Review</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<header>
-    <a href="index.html" id="index-link">
-    <img src="images/logo.png" alt="Application Logo" class="logo">
-    </a>
-    <nav>
+  <body class="add-review-page">
+    <header>
+      <a href="index.html" id="index-link">
+        <img src="images/logo.png" alt="Application Logo" class="logo" />
+      </a>
+      <nav>
         <div class="nav-actions">
-            <a href="login.html" class="login-button" id="login-link">Login</a>
+          <a href="login.html" class="login-button" id="login-link">Login</a>
         </div>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<body>
     <main>
-        <!-- Add something to idfentify the place you're reviewing -->
-        <form id="review-form">
-            <h2>Add a Review</h2>
-            <label for="review">Your Review:</label>
-            <textarea id="review" name="review" required></textarea>
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating" required>
-                <!-- Options for rating -->
-            </select>
-            <button type="submit">Submit Review</button>
-        </form>
+      <h1 class="title-reviewing">Reviewing</h1>
+      <!-- Add something to idfentify the place you're reviewing -->
+      <form id="review-form" class="add-review-card-page">
+        <h2>Add a Review</h2>
+        <label for="review">Your Review:</label>
+        <textarea id="review" name="review" required placeholder="Partagez votre expérience..."></textarea>
+        <label for="rating">Rating:</label>
+        <div class="rating-star">
+            <!-- Options rating -->
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star">&#9733;</label>
+
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars">&#9733;</label>
+
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars">&#9733;</label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars">&#9733;</label>
+
+            <input type="radio" id="star5" name="rating" value="5" required>
+            <label for="star5" title="5 stars">&#9733;</label>                       
+        </div>
+        <button type="submit">Submit Review</button>
+      </form>
     </main>
     <footer>
-        <p>&copy; 2025 HBnB Evolution. All rights reserved.</p>
+      <p>&copy; 2025 HBnB Evolution. All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
