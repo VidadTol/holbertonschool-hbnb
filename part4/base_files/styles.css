@@ -1,4 +1,10 @@
 /* ================== Global Styles ========================== */
+:root {
+  --primary-color: #655fe2; /* Couleur principale de l'application */
+  --secondary-color: #C68EFD; /* Couleur secondaire pour les fonds */
+  --text-color: #333; /* Couleur du texte principal */
+  --border-radius: 5px; /* Rayon de bordure par défaut */
+}
 /* Appliquer une base uniforme à tous les éléments */
 * {
   box-sizing: border-box; /* Gérer les tailles d'éléments correctement */
@@ -164,8 +170,9 @@ h1 {
 }
 
 .place-card .details-button:hover {
-  background-color: #655fe2; /* Couleur inchangée au survol */
+  background-color: var(--secondary-color); /* Couleur inchangée au survol */
 }
+
 
 /* ================== Available Places ======================== */
 /* Styliser la partie place details avec host price desc amenities*/
@@ -265,8 +272,20 @@ h1 {
   text-align: left; /* Alignement à droite */
 }
 
-.add-a-review-button:hover {
-  background-color: #fae2f3;
+.Add-review button {
+  background-color: #655fe2; /* Couleur principale pour le bouton */
+  color: white; /* Texte blanc sur le bouton */
+  border: none; /* Supprimer les bordures par défaut */
+  padding: 0.75rem 1.5rem; /* Espacement interne du bouton */
+  border-radius: 25px 5px; /* Bordure arrondie pour un look moderne */
+  cursor: pointer; /* Curseur en forme de main au survol */
+  font-weight: bold; /* Texte en gras */
+  transition: background 0.3s; /* Animation fluide pour le survol */
+  font-size: 0.9rem; /* Taille du texte */
+}
+
+.Add-review button:hover {
+  background-color: var(--secondary-color); /* Couleur inchangée au survol */
 }
 
 
@@ -342,7 +361,7 @@ h1 {
 }
 
 .add-review-card-page button:hover {
-  background-color: #fae2f3;
+  background-color: var(--secondary-color);
 }
 
 .add-review-card-page label {
@@ -362,7 +381,7 @@ h1 {
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .rating-star {
@@ -380,11 +399,12 @@ h1 {
   color: #d0c3c3;
   cursor: pointer;
   transition: color 0.3s;
+  padding: 0.1rem;
 }
 
 .rating-star label:hover,
 .rating-star label:hover ~ label {
-  color: #655fe2;
+  color: gold;
 }
 
 .rating-star input:checked ~ label {
@@ -402,6 +422,10 @@ h1 {
   font-size: 1rem;
   cursor: pointer;
   border: 2px solid #655fe2; /* Bordure légère */
+}
+
+.form-login-button:hover {
+  background-color: var(--secondary-color); /* Couleur principale au survol */
 }
 
 .Welcome-message {
