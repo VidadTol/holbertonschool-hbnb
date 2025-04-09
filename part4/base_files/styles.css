@@ -299,22 +299,23 @@ h1 {
 
 /* Style de base des boutons */
 .tabs .tab-link {
-  background-color: #f4f4f4; /* Couleur de fond par défaut */
-  color: #333; /* Couleur du texte */
   border: 1px solid #ddd; /* Bordure grise légère */
   padding: 10px 20px; /* Espacement interne des boutons */
   border-radius: 5px; /* Coins arrondis */
   text-transform: capitalize; /* Mettre la première lettre en majuscule */
   font-size: 16px; /* Taille du texte */
   cursor: pointer; /* Curseur en forme de main */
-  transition: all 0.3s ease; /* Transition pour des animations fluides */
+  transition: all 0.3s; /* Transition pour des animations fluides */
+  background-color: #655fe2;
+  color: white;
+  border-radius: 25px 5px;
+
 }
 
 
 /* Style au survol (hover) */
 .tabs .tab-link:hover {
-  background-color: #ddd; /* Couleur de fond plus sombre au survol */
-  color: #000; /* Texte légèrement plus sombre */
+  background-color: var(--secondary-color);
 }
 
 /* Style pour le bouton actif (classe active) */
@@ -360,10 +361,6 @@ h1 {
   box-shadow: 0 0 3px rgba(65, 65, 65, 0.5);
 }
 
-.add-review-card-page button:hover {
-  background-color: var(--secondary-color);
-}
-
 .add-review-card-page label {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -377,11 +374,16 @@ h1 {
   border: 1px solid #655fe2;
   border-radius: 5px;
   padding: 0.5rem 1rem;
+  border-radius: 25px 5px;
   margin-top: 1rem;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.add-review-card-page button:hover {
+  background-color: var(--secondary-color);
 }
 
 .rating-star {
@@ -419,6 +421,7 @@ h1 {
   background-color: #655fe2;
   border-radius: 20px;
   padding: 0.5rem 1rem;
+  border-radius: 25px 5px;
   font-size: 1rem;
   cursor: pointer;
   border: 2px solid #655fe2; /* Bordure légère */
