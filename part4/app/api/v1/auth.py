@@ -22,6 +22,7 @@ class Login(Resource):
         if not user or not user.verify_password(credentials['password']):
             return {'error': 'Invalid credentials'}, 401
         access_token = create_access_token(identity={'id': str(user.id), 'is_admin': user.is_admin})
+        print(f"Generated JWT token for user {user.id}: {access_token}")
         return {'access_token': access_token}, 200
 
 @api.route('/protected')

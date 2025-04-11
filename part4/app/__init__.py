@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 import config
 from extends import db, bcrypt, jwt
+from flask_cors import CORS
 
 # Import API namespaces
 from app.api.v1.auth import api as auth_ns
@@ -37,6 +38,7 @@ def create_app(config_class=config.DevelopmentConfig):
     Create and configure the Flask application.
     """
     app = Flask(__name__)
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
     app.config.from_object(config_class)
     api = Api(
         app,
