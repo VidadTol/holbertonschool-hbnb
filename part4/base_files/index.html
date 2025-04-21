@@ -21,10 +21,10 @@
     <main>
         <h1>Available Places</h1>
         <div class="tabs">
-            <button class="tab-link" onclick="filterPlaces('All')" aria-label="Show all places">All</button>
-            <button class="tab-link" onclick="filterPlaces('Houses')" aria-label="Show Houses">Houses</button>
-            <button class="tab-link" onclick="filterPlaces('Cabins')" aria-label="Show Cabins">Cabins</button>
-            <button class="tab-link" onclick="filterPlaces('Apartments')" aria-label="Show Apartment">Apartements</button>
+            <button class="tab-link" onclick="filterPlaces('all')">All</button>
+            <button class="tab-link" onclick="filterPlaces('house')">House</button>
+            <button class="tab-link" onclick="filterPlaces('cabin')">Cabin</button>
+            <button class="tab-link" onclick="filterPlaces('apartment')">Apartment</button>
         </div>
 
         <section id="filter">
@@ -38,6 +38,10 @@
                     <option value="300">$300</option>
                     <option value="400">$400</option>
                     <option value="500">$500</option>
+                    <option value="600">$600</option>
+                    <option value="700">$700</option>
+                    <option value="800">$800</option>
+                    <option value="900">$900</option>
                 </select>
             </div>
         </section>
@@ -70,6 +74,32 @@
                 <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
             </article>
 
+            <article class="place-card">
+                <h3>House ultra luxury </h3>
+                <img src="/part4/doc_images/house luxe.jpg" alt="House ultra luxury">
+                <div class="place-details">
+                    <p>Price per night: $500</p>
+                </div>
+                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            </article>
+
+            <article class="place-card">
+                <h3>Modern Apartment luxury</h3>
+                <img src="/part4/doc_images/apartement luxe.jpg" alt="Modern Apartment luxury">
+                <div class="place-details">
+                    <p>Price per night: $800</p>
+                </div>
+                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            </article>
+            <article class="place-card">
+                <h3>Seaside House</h3>
+                <img src="/part4/doc_images/house bord de mer.jpg" alt="Seaside House">
+                <div class="place-details">
+                    <p>Price per night: $900</p>
+                </div>
+                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            </article>
+
         </section>
     </main>
 
@@ -85,7 +115,7 @@
             </a>
         </p>
     </footer>
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
 

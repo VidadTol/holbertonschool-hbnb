@@ -1,7 +1,7 @@
 /* ================== Global Styles ========================== */
 :root {
   --primary-color: #655fe2; /* Couleur principale de l'application */
-  --secondary-color: #C68EFD; /* Couleur secondaire pour les fonds */
+  --secondary-color: #E9A5F1; /* Couleur secondaire pour les fonds */
   --text-color: #333; /* Couleur du texte principal */
   --border-radius: 5px; /* Rayon de bordure par défaut */
 }
@@ -30,7 +30,7 @@ html, body {
 /* ==================== Header Styles ======================== */
 /* Styliser la section header, contenant le logo et la navigation */
 header {
-  background-color: #655fe2; /* Couleur d'arrière-plan du header */
+  background: linear-gradient(to right, #667eea, #764ba2);
   color: #fff; /* Couleur de texte blanche pour le contraste */
   padding: 1rem 2rem; /* Espacement interne pour une meilleure apparence */
   display: flex; /* Utiliser Flexbox pour l'agencement horizontal */
@@ -124,28 +124,30 @@ h1 {
 /* ================= Place Card Styles ======================== */
 /* Styliser les cartes représentant des lieux */
 .place-card {
-  background-color: #fff; /* Fond blanc pour les cartes */
+  background-color: white; /* Fond blanc pour les cartes */
   border-radius: 10px; /* Bordures arrondies */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtile */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtile */
   padding: 10px; /* Espacement interne des cartes */
   text-align: center; /* Centrer le texte horizontalement */
   width: 280px; /* Largeur fixe des cartes */
+  height: 400px; /* Hauteur fixe des cartes */;
   margin: 20px; /* Espacement externe entre les cartes */
-  border: 1px solid #ddd; /* Bordure grise légère */
+  border: 3px solid #667eea; /* Bordure grise légère */
+ 
 }
 
 .place-card img {
   width: 100%; /* Assure que l'image occupe toute la largeur de sa carte */
   height: auto; /* Garde les proportions correctes */
   border-radius: 20px; /* Coins arrondis pour un effet esthétique */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un look moderne */
+  box-shadow: 0 4px 8px rgba(240, 5, 5, 0.1); /* Légère ombre pour un look moderne */
 }
 
 
 .place-card h3 {
   margin-top: 0; /* Supprimer la marge supérieure */
   margin-bottom: 0.5rem; /* Espacement sous le titre */
-  color: #555; /* Couleur neutre du texte */
+  color: black; /* Couleur neutre du texte */
   font-size: 1.5rem; /* Taille du texte du titre */
 }
 
@@ -158,7 +160,6 @@ h1 {
 }
 
 .place-card .details-button {
-  background-color: #655fe2; /* Couleur principale pour le bouton */
   color: white; /* Texte blanc sur le bouton */
   border: none; /* Supprimer les bordures par défaut */
   padding: 0.75rem 1.5rem; /* Espacement interne du bouton */
@@ -167,11 +168,13 @@ h1 {
   font-weight: bold; /* Texte en gras */
   transition: background-color 0.3s ease; /* Animation fluide pour le survol */
   font-size: 0.9rem; /* Taille du texte */
+  background: linear-gradient(to right, #667eea, #764ba2);
+  background-size: 200% auto; /* Double la taille du dégradé */
+  transition: background-position 0.5s ease; /* Animation de la position du fond */
 }
 
 .place-card .details-button:hover {
-  background-color: var(--secondary-color); /* Couleur inchangée au survol */
-}
+  background-position: -100% center; /* Déplace le dégradé vers la gauche */}
 
 
 /* ================== Available Places ======================== */
@@ -201,13 +204,35 @@ h1 {
   padding: 0.5rem;/* Espacement interne pour les détails */
   flex-direction: column; /* Positionner les éléments verticalement */
   justify-content: center;
-  width: 90vw; /* Largeur de la carte d'avis */
+  width: 70vw; /* Largeur de la carte d'avis */
   
 }
 .place-info p{
   font-weight: bold;
   margin-bottom: 1rem;
 }
+
+/* Masquer les lieux filtrés */
+.place-card {
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Ajoute une animation de transition */
+  opacity: 1;
+  transform: scale(1);
+}
+
+.place-card.hidden {
+  opacity: 0; /* Rendre l'élément invisible */
+  transform: scale(0.9); /* Rétrécir légèrement pour un effet élégant */
+  display: none; /* Supprime complètement après l'animation */
+}
+.place-card img {
+  display: block; /* Assure que l'image est visible */
+  visibility: visible; /* Empêche que l'image soit cachée */
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 
 /* ================= Review  ======================== */
@@ -229,7 +254,6 @@ h1 {
   gap: 0.5rem; /* Ajoute un espacement entre le texte et les étoiles */
   
 }
-
 
 .rating {
   display: flex; /* Aligne les étoiles horizontalement */
@@ -273,7 +297,6 @@ h1 {
 }
 
 .Add-review button {
-  background-color: #655fe2; /* Couleur principale pour le bouton */
   color: white; /* Texte blanc sur le bouton */
   border: none; /* Supprimer les bordures par défaut */
   padding: 0.75rem 1.5rem; /* Espacement interne du bouton */
@@ -282,12 +305,14 @@ h1 {
   font-weight: bold; /* Texte en gras */
   transition: background 0.3s; /* Animation fluide pour le survol */
   font-size: 0.9rem; /* Taille du texte */
+  background: linear-gradient(to right, #667eea, #764ba2);
+  background-size: 200% auto; /* Double la taille du dégradé */
+  transition: background-position 0.5s ease; /* Animation de la position du fond */
 }
 
 .Add-review button:hover {
-  background-color: var(--secondary-color); /* Couleur inchangée au survol */
+  background-position: -100% center; /* Déplace le dégradé vers la gauche */
 }
-
 
 /* ================ Tabs Styles ==================== */
 .tabs {
@@ -306,7 +331,7 @@ h1 {
   font-size: 16px; /* Taille du texte */
   cursor: pointer; /* Curseur en forme de main */
   transition: all 0.3s; /* Transition pour des animations fluides */
-  background-color: #655fe2;
+  background: linear-gradient(to right, #667eea, #764ba2);
   color: white;
   border-radius: 25px 5px;
 
@@ -369,7 +394,7 @@ h1 {
 }
 
 .add-review-card-page button {
-  background-color: #655fe2;
+  
   color: #f8f3f3;
   border: 1px solid #655fe2;
   border-radius: 5px;
@@ -379,11 +404,14 @@ h1 {
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  background-size: 200% auto; /* Double la taille du dégradé */
+  transition: background-position 10s ease; /* Animation de la position du fond */
+  
 }
 
 .add-review-card-page button:hover {
-  background-color: var(--secondary-color);
+    background-position: -100% center; /* Déplace le dégradé vers la gauche */
 }
 
 .rating-star {
@@ -410,7 +438,7 @@ h1 {
 }
 
 .rating-star input:checked ~ label {
-  color: #655fe2;
+  color: gold;
 }
 
 /*--------------- Login Page ---------------*/
@@ -418,7 +446,9 @@ h1 {
 .form-login-button {
   color: white;
   font-family: bold;
-  background-color: #655fe2;
+  background: linear-gradient(to right, #5f73ce, #7013ce);
+  background-size: 200% auto; /* Double la taille du dégradé */
+  transition: background-position 0.5s ease; /* Animation de la position du fond */
   border-radius: 20px;
   padding: 0.5rem 1rem;
   border-radius: 25px 5px;
@@ -428,22 +458,27 @@ h1 {
 }
 
 .form-login-button:hover {
-  background-color: var(--secondary-color); /* Couleur principale au survol */
+  background-position: -100% center; /* Déplace le dégradé vers la gauche */
 }
 
 .Welcome-message {
   margin-top: 2rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  color: black; /* Couleur principale */
+  color: rgb(48, 73, 237); /* Couleur principale */
+  -webkit-text-stroke: 1px white; /* Pour les navigateurs basés sur WebKit (Chrome, Safari) */
+  color: white;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  padding: 10px 20px; /* Espacement intérieur (haut/bas, gauche/droite) */
+  border-radius: 5px; /* Optionnel : pour arrondir les angles du bandeau */
 }
 
 .login-card {
   max-width: 400px;
   width: 100%;
-  
+  background: linear-gradient(to right, #667eea, #764ba2);
   margin-top: 3rem;
-  border: 1px solid #d0c3c3;
+  border: 10px solid #667eea;
   padding: 1rem;
   border-radius: 20px;
   display: flex;
@@ -455,6 +490,7 @@ h1 {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
+  color: #fff;
 }
 
 .login-card input {
@@ -472,11 +508,17 @@ h1 {
   box-shadow: 0 0 3px rgba(65, 65, 65, 0.5);
 }
 
+.login-page {
+  background-image: url("/part4/doc_images/voyage\ carte.jpg");
+  background-size: cover; /* Couvrir toute la page */
+  opacity: 5; /* Rendre l'image légèrement transparente */;
+}
+
 
 /* =================== Footer Styles ==================== */
 /* Styliser la section footer pour le bas de la page */
 footer {
-  background-color: #655fe2; /* Couleur d'arrière-plan similaire au header */
+  background: linear-gradient(to right, #667eea, #764ba2);
   color: #fff; /* Texte blanc pour le contraste */
   padding: 1rem; /* Espacement interne du footer */
   text-align: center; /* Centrer le texte horizontalement */

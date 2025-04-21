@@ -1,8 +1,7 @@
-
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (loginLink) {
     loginLink.addEventListener("click", () => {
       window.location.href = "login.html"; // Rediriger vers la page de connexion
-      fetchPlacesFromDatabase(); // Ajout de l'appel à fetchPlacesFromDatabase
     });
   }
 
@@ -35,7 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
         await loginUser(email, password);
       } catch (error) {
         console.error("Erreur lors de la tentative de connexion :", error);
-        displayLoginError("Une erreur inattendue s'est produite. Veuillez réessayer.");
+        displayLoginError(
+          "Une erreur inattendue s'est produite. Veuillez réessayer."
+        );
       }
     });
   }
@@ -122,7 +122,9 @@ function displayLoginError(message) {
 }
 
 function isUserLoggedIn() {
-  const token = document.cookie.split("; ").find((row) => row.startsWith("token="));
+  const token = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("token="));
   return !!token;
 }
 
@@ -150,69 +152,89 @@ async function fetchPlaces(token) {
 // Ajout de la fonction pour récupérer les lieux depuis la base de données
 async function fetchPlacesFromDatabase() {
   try {
-    const response = await fetch('http://localhost:5000/api/places');
+    const response = await fetch("http://localhost:5000/api/places");
     if (!response.ok) {
-      throw new Error('Erreur lors de la récupération des lieux depuis la base de données');
+      throw new Error(
+        "Erreur lors de la récupération des lieux depuis la base de données"
+      );
     }
     const places = await response.json();
-    console.log('Lieux récupérés depuis la base de données :', places);
+    console.log("Lieux récupérés depuis la base de données :", places);
     // Ici, tu peux ajouter le code pour afficher les lieux dans ton interface utilisateur
   } catch (error) {
-    console.error('Erreur lors de la récupération des lieux depuis la base de données :', error);
+    console.error(
+      "Erreur lors de la récupération des lieux depuis la base de données :",
+      error
+    );
   }
 }
 
 // Ajout de la fonction pour ajouter un lieu (exemple)
 async function addPlaceToDatabase(placeData) {
   try {
-    const response = await fetch('http://localhost:5000/api/places', {
-      method: 'POST',
+    const response = await fetch("http://localhost:5000/api/places", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(placeData),
     });
     if (!response.ok) {
-      throw new Error('Erreur lors de l\'ajout du lieu à la base de données');
+      throw new Error("Erreur lors de l'ajout du lieu à la base de données");
     }
     const newPlace = await response.json();
-    console.log('Nouveau lieu ajouté à la base de données :', newPlace);
+    console.log("Nouveau lieu ajouté à la base de données :", newPlace);
   } catch (error) {
-    console.error('Erreur lors de l\'ajout du lieu à la base de données :', error);
+    console.error(
+      "Erreur lors de l'ajout du lieu à la base de données :",
+      error
+    );
   }
 }
 async function displayPlaces() {
   try {
-      const places = await fetchPlaces();
-      const placesContainer = document.getElementById('places-list');
+    const places = await fetchPlaces();
+    const placesContainer = document.getElementById("places-list");
 
-      if (!placesContainer) {
-          console.error('Element with id places-list not found');
-          return;
-      }
+    if (!placesContainer) {
+      console.error("Element with id places-list not found");
+      return;
+    }
 
-      placesContainer.innerHTML = ''; // Efface le contenu précédent
+    placesContainer.innerHTML = ""; // Efface le contenu précédent
 
-      if (places && Array.isArray(places)) {
-          places.forEach(place => {
-              const placeElement = document.createElement('div');
-              placeElement.className = 'place-card';
-              placeElement.innerHTML = `
+    if (places && Array.isArray(places)) {
+      places.forEach((place) => {
+        const placeElement = document.createElement("div");
+        placeElement.className = "place-card";
+        placeElement.setAttribute("data-type", place.type.toLowerCase()); // Ajoute l'attribut data-type
+
+        placeElement.innerHTML = `
                   <h3>${place.name}</h3>
                   <p>Host: ${place.host}</p>
                   <p>Price per night: ${place.price}</p>
                   <p>Description: ${place.description}</p>
                   <p>Amenities: ${place.amenities}</p>
               `;
-              placesContainer.appendChild(placeElement);
-          });
-      } else {
-          placesContainer.innerHTML = '<p>Aucun lieu à afficher.</p>';
-      }
-
+        placesContainer.appendChild(placeElement);
+      });
+    } else {
+      placesContainer.innerHTML = "<p>Aucun lieu à afficher.</p>";
+    }
   } catch (error) {
-      console.error('Erreur lors de l\'affichage des lieux:', error);
+    console.error("Erreur lors de l'affichage des lieux:", error);
   }
 }
+function filterPlaces(type) {
+  const places = document.querySelectorAll(".place-card"); // Sélectionne tous les lieux
+  const buttons = document.querySelectorAll(".tab-link"); // Sélectionne tous les boutons
 
+  // Mettre à jour la classe "active" pour le bouton sélectionné
+  buttons.forEach(button => {
+      if (button.textContent.trim().toLowerCase() === type.toLowerCase()) {
+          button.classList.add("active"); // Activer le bouton
+      } else {
+          button.classList.remove("active"); // Désactiver les autres boutons
+      }
+  });
 }
